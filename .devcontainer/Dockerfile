@@ -8,5 +8,6 @@ RUN pipx install meltano
 # Install SQL linter and formatter
 RUN pipx install sqlfluff
 
+USER vscode
 # Add shorthand alias for invoking dbt
-RUN alias dbt='meltano invoke dbt'
+RUN echo 'alias dbt="meltano invoke dbt"' >> ~/.bashrc
