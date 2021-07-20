@@ -1,0 +1,36 @@
+// For format details, see https://aka.ms/devcontainer.json.
+// For config options, see the README at:
+// https://github.com/microsoft/vscode-dev-containers/tree/v0.187.0/containers/python-3
+{
+	"name": "Meltano",
+	"build": {
+		"dockerfile": "Dockerfile",
+		// Optionally add build args to be passed to the dockerfile:
+		// "args": { "VARIANT": "focal" }
+	},
+
+	// Add the IDs of extensions you want installed when the container is created.
+	"extensions": [
+		"innoverio.vscode-dbt-power-user"
+	],
+
+	// Use 'forwardPorts' to make a list of ports inside the container available locally.
+	// "forwardPorts": [],
+
+	// Use 'postCreateCommand' to run commands after the container is created.
+	"postCreateCommand": "meltano install",
+
+	// Comment out to connect as root instead.
+	// More info: https://aka.ms/vscode-remote/containers/non-root.
+	"remoteUser": "vscode",
+
+	// Set *default* container specific settings.json values on container create.
+	"settings": {
+		"python.linting.ignorePatterns": [
+			".vscode/*.py",
+			"**/site-packages/**/*.py",
+			".meltano"
+		],
+		"python.testing.pytestEnabled": false,
+	},
+}

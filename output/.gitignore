@@ -1,0 +1,4 @@
+# Do not commit this folders contents to git, except README (if applicable) and this gitignore file
+*.*
+!.gitignore
+!README.md
