@@ -26,4 +26,5 @@ models:
     +materialized: "{{ env_var('DBT_MATERIALIZE_TABLES_AS', 'view') }}"
 vars:
   # Update this line to use the larger datasets:
-  rawdb_schema: TPCH_SF100
+  rawdb_schema: TPCH_SF10
+  rawdb_dbname: TRAINING_DB
