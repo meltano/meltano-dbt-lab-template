@@ -11,7 +11,8 @@
 
 	// Add the IDs of extensions you want installed when the container is created.
 	"extensions": [
-		"innoverio.vscode-dbt-power-user"
+		"innoverio.vscode-dbt-power-user",
+		"dorzey.vscode-sqlfluff"
 	],
 
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
