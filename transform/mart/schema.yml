@@ -1,0 +1,24 @@
+version: 2
+
+models:
+  - name: list_characters
+    description: A list of all characters.
+    columns:
+      - name: character_id
+        description: Unique integer key for the character.
+        tests:
+          - unique
+          - not_null
+      - name: character_name
+        description: Name of the character.
+        tests:
+          - not_null
+      - name: status
+        tests:
+          - not_null
+      - name: species
+        tests:
+          - not_null
+      - name: type
+        tests:
+          - not_null
