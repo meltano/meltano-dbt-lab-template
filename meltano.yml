@@ -17,7 +17,9 @@ plugins:
     variant: datamill-co
     pip_url: singer-target-postgres
     config:
+      postgres_host: warehouse_db
       postgres_database: warehouse
+      postgres_schema: public
       postgres_username: meltano
   transformers:
   - name: dbt
