@@ -1,0 +1,13 @@
+version: 2
+
+sources:
+  - name: raw
+    database: warehouse
+    schema: public
+    tables:
+      - name: episodes
+      - name: episodes__characters
+      - name: characters
+      - name: characters__episode
+      - name: locations
+      - name: locations__residents

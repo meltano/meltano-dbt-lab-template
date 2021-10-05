@@ -3,27 +3,28 @@ version: '1.0'
 profile: meltano
 config-version: 2
 source-paths:
-- models
+- transform/stage
+- transform/mart
 analysis-paths:
-- analysis
+- transform/analysis
 test-paths:
-- tests
+- transform/tests
 data-paths:
-- data
+- transform/data
 macro-paths:
-- macros
+- transform/macros
 snapshot-paths:
-- snapshots
-target-path: ../.meltano/transformers/dbt/target
+- transform/snapshots
+target-path: .dbt
 log-path: logs
 modules-path: dbt_modules
 clean-targets:
-- ../.meltano/transformers/dbt/target
+- .dbt
 - dbt_modules
 - logs
 models:
   my_meltano_project:
-    +materialized: "{{ env_var('DBT_MATERIALIZE_TABLES_AS', 'view') }}"
+    +materialized: "{{ env_var('DBT_MATERIALIZE_TABLES_AS', 'table') }}"
 vars:
   # Update this line to use the larger datasets:
   rawdb_schema: TPCH_SF10
