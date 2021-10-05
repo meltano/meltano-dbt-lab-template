@@ -1,0 +1,36 @@
+version: '3.1'
+services:
+  meltano:
+    build: .
+    # env_file:
+    # - ../.env
+    tty: true
+    ports:
+    - 5000:5000
+    # working_dir: /webapp
+    volumes:
+    - ..:/meltano
+    environment:
+      MELTANO_ANALYZE_API_URL: http://localhost:5000
+      MELTANO_ANALYZE_LOG_PATH: /tmp/meltano.log
+      MELTANO_POSTGRES_PORT: 5432
+      POSTGRES_SCHEMA: analytics
+      MELTANO_POSTGRES_URL: api_db
+      MELTANO_POSTGRES_DB: meltano
+      MELTANO_POSTGRES_USER: meltano
+      MELTANO_POSTGRES_PASSWORD: meltano
+      # MELTANO_MODEL_DIR: /meltano/model
+      MELTANO_TRANSFORM_DIR: /meltano
+      # MELTANO_TRANSFORM_DIR: /meltano/transform
+
+  warehouse_db:
+    image: postgres:11
+    environment:
+      POSTGRES_DB: warehouse
+      POSTGRES_USER: meltano
+      POSTGRES_PASSWORD: meltano
+    ports:
+    - '5502:5432'
+
+volumes:
+  pgdata: {}
