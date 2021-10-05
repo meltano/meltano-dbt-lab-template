@@ -15,7 +15,7 @@ plugins:
     pip_url: pipelinewise-target-snowflake
   transformers:
   - name: dbt
-    pip_url: dbt==0.19.1
+    pip_url: dbt==0.20.2
   files:
   - name: dbt
     pip_url: git+https://gitlab.com/meltano/files-dbt.git@config-version-2
