@@ -6,6 +6,14 @@ plugins:
   - name: tap-carbon-intensity
     variant: meltano
     pip_url: git+https://gitlab.com/meltano/tap-carbon-intensity.git
+  - name: tap-rickandmorty
+    namespace: tap_rickandmorty
+    pip_url: git+https://github.com/aaronsteers/tap-rickandmorty.git
+    executable: tap-rickandmorty
+    capabilities:
+    - catalog
+    - discover
+    - state
   loaders:
   - name: target-jsonl
     variant: andyh1203
