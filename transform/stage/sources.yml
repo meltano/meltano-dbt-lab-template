@@ -1,7 +1,7 @@
 version: 2
 
 sources:
-  - name: raw
+  - name: rickandmorty
     database: warehouse
     schema: public
     tables:

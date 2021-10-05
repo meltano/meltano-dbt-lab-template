@@ -1,2 +1,2 @@
 SELECT *
-FROM {{ source('raw', 'locations__residents') }}
+FROM {{ source('rickandmorty', 'locations__residents') }}

@@ -1,2 +1,2 @@
 SELECT *
-FROM {{ source('raw', 'episodes') }}
+FROM {{ source('rickandmorty', 'episodes') }}
