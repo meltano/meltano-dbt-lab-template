@@ -13,6 +13,12 @@ plugins:
   - name: target-snowflake
     variant: transferwise
     pip_url: pipelinewise-target-snowflake
+  - name: target-postgres
+    variant: datamill-co
+    pip_url: singer-target-postgres
+    config:
+      postgres_database: warehouse
+      postgres_username: meltano
   transformers:
   - name: dbt
     pip_url: dbt==0.20.2
